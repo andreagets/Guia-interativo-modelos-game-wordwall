@@ -75,17 +75,97 @@
       pointer-events: none;
     }
 
+    .header-top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTAINER E SVG/VETOR DO LOGÓTIPO GETS */
+    .brand-logo-box {
+      background: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    }
+
+    .brand-logo-vector {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .gets-seal {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 3px solid #008D86;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .gets-seal svg {
+      width: 28px;
+      height: 28px;
+      fill: #008D86;
+    }
+
+    .gets-seal-label {
+      position: absolute;
+      bottom: 1px;
+      font-size: 0.44rem;
+      font-weight: 800;
+      color: #008D86;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .gets-text-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .gets-text-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #008D86;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .gets-text-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #008D86;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
     .author-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background: var(--secondary);
       color: #FFFFFF;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 700;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 999px;
-      margin-bottom: 16px;
       letter-spacing: 0.02em;
     }
 
@@ -115,7 +195,7 @@
       color: #E2E8F0;
     }
 
-    /* SECTIONS */
+    /* SEÇÕES */
     .section-card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
@@ -152,7 +232,7 @@
       margin-bottom: 22px;
     }
 
-    /* INTERACTIVE ANALYZER */
+    /* ANALISADOR INTERATIVO */
     .input-box-wrapper {
       display: flex;
       flex-direction: column;
@@ -256,7 +336,7 @@
       color: var(--dark);
     }
 
-    /* RESULT CARD */
+    /* RESULTADO DO ANALISADOR */
     .result-container {
       margin-top: 28px;
       display: none;
@@ -611,6 +691,15 @@
       line-height: 1.45;
     }
 
+    .citation-code a {
+      color: #38BDF8;
+      text-decoration: underline;
+    }
+
+    .citation-code a:hover {
+      color: #7DD3FC;
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 14px;
@@ -626,6 +715,7 @@
 
     @media (max-width: 768px) {
       .header-card { padding: 24px 20px; }
+      .header-top-bar { flex-direction: column; align-items: flex-start; }
       .title-group h1 { font-size: 1.6rem; }
       .section-card { padding: 20px; }
       .action-btn-row { flex-direction: column; }
@@ -637,20 +727,40 @@
 
 <div class="container">
 
-  <!-- CABEÇALHO COM AUTORIA -->
+  <!-- CABEÇALHO COM LOGOMARCA VETORIAL GETS E AUTORIA -->
   <header class="header-card">
-    <div class="author-badge">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-      Autoria: Profa. Dra. Andréa Soares Rocha da Silva
+    <div class="header-top-bar">
+      <!-- LOGOMARCA EMBUTIDA (AUTÓNOMA / NÃO DEPENDE DE ARQUIVO EXTERNO) -->
+      <div class="brand-logo-box">
+        <div class="brand-logo-vector" title="Grupo Educação, Tecnologia e Saúde - GETS.UFC">
+          <div class="gets-seal">
+            <svg viewBox="0 0 100 100">
+              <path d="M50 18 C38 18 30 25 30 36 C30 46 36 50 36 54 C36 58 32 60 22 66 C15 70 12 76 12 85 L88 85 C88 76 85 70 78 66 C68 60 64 58 64 54 C64 50 70 46 70 36 C70 25 62 18 50 18 Z M40 50 C43 54 47 56 50 56 C53 56 57 54 60 50 C57 52 53 53 50 53 C47 53 43 52 40 50 Z" />
+              <circle cx="50" cy="38" r="16" fill="#008D86" />
+              <path d="M34 32 C34 22 40 18 50 18 C60 18 66 22 66 32 Z" fill="#FFFFFF" />
+            </svg>
+            <span class="gets-seal-label">GETS.UFC</span>
+          </div>
+          <div class="gets-text-brand">
+            <span class="gets-text-title">Grupo Educação,</span>
+            <span class="gets-text-sub">Tecnologia e Saúde</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="author-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        Autoria: Profa. Dra. Andréa Soares Rocha da Silva
+      </div>
     </div>
 
     <div class="title-group">
       <h1>Guia Interativo de Escolha de Jogos no Wordwall</h1>
-      <p class="lead">Ferramenta analítica de design instrucional para seleção e alinhamento de modelos de games da plataforma Wordwall.net aos objetivos pedagógicos e competências de aprendizagem (Silva, 2026).</p>
+      <p class="lead">Ferramenta analítica de design instrucional para seleção e alinhamento de modelos de games da plataforma Wordwall.net aos objetivos pedagógicos e competências de aprendizagem (Silva, 2026)[cite: 1].</p>
     </div>
 
     <div class="evidence-summary">
-      <strong>Fundamentação teórica:</strong> O jogo digital não produz resultados por si só; sua eficácia decorre do alinhamento explícito ao objetivo de aprendizagem, da mediação docente estruturada e do equilíbrio entre desafio cognitivo e engajamento (Saravali; Bessa; Lima, 2025; Prensky, 2012; Tsutsumi et al., 2020).
+      <strong>Fundamentação teórica:</strong> O jogo digital não produz resultados por si só; a sua eficácia decorre do alinhamento explícito ao objetivo de aprendizagem, da mediação docente estruturada e do equilíbrio entre desafio cognitivo e engajamento (Saravali; Bessa; Lima, 2025; Prensky, 2012; Tsutsumi et al., 2020)[cite: 1].
     </div>
   </header>
 
@@ -660,16 +770,16 @@
       <span class="step-tag">Etapa 1</span>
       Analisador Inteligente por Objetivo de Aprendizagem
     </h2>
-    <p class="section-desc">Digite abaixo o que você deseja que os estudantes aprendam ou desenvolvam (ex.: verbos de ação, conceitos, sequências ou atitudes). O motor analisará a semântica pedagógica e indicará o modelo ideal no Wordwall:</p>
+    <p class="section-desc">Digite abaixo o que pretende que os estudantes aprendam ou desenvolvam (ex.: verbos de ação, conceitos, sequências ou atitudes). O motor analisará a semântica pedagógica e indicará o modelo ideal no Wordwall[cite: 1]:</p>
 
     <div class="input-box-wrapper">
-      <textarea id="goalInput" class="goal-input" placeholder="Exemplo: Identificar e diferenciar as estruturas anatômicas do sistema circulatório em uma imagem clínica..."></textarea>
+      <textarea id="goalInput" class="goal-input" placeholder="Exemplo: Identificar e diferenciar as estruturas anatómicas do sistema circulatório numa imagem clínica..."></textarea>
       
       <div class="examples-wrapper">
         <span class="examples-label">Sugestões rápidas:</span>
-        <button type="button" class="example-chip" onclick="setGoal('Diferenciar termos técnicos associando cada conceito à sua respectiva definição oficial.')">Conceitos e Termos</button>
+        <button type="button" class="example-chip" onclick="setGoal('Diferenciar termos técnicos associando cada conceito à sua respetiva definição oficial.')">Conceitos e Termos</button>
         <button type="button" class="example-chip" onclick="setGoal('Ordenar cronologicamente as etapas do protocolo operacional de emergência.')">Sequência Operacional</button>
-        <button type="button" class="example-chip" onclick="setGoal('Localizar e rotular os componentes de um maquinário em um mapa esquemático.')">Localização Visual</button>
+        <button type="button" class="example-chip" onclick="setGoal('Localizar e rotular os componentes de um maquinário num mapa esquemático.')">Localização Visual</button>
         <button type="button" class="example-chip" onclick="setGoal('Avaliar criticamente a veracidade de condutas clínicas sob pressão de tempo.')">Tomada de Decisão Rápida</button>
         <button type="button" class="example-chip" onclick="setGoal('Dinamizar a aula com sorteio aleatório de estudos de caso para debate em grupo.')">Sorteio e Metodologia Ativa</button>
         <button type="button" class="example-chip" onclick="setGoal('Estimular a memorização ortográfica e fixação de novos jargões técnicos da área.')">Vocabulário Técnico</button>
@@ -744,7 +854,7 @@
       <span class="step-tag">Etapa 2</span>
       Catálogo Geral de Modelos do Wordwall por Natureza Pedagógica
     </h2>
-    <p class="section-desc">Filtre e explore todos os 25 modelos do Wordwall agrupados conforme a matriz pedagógica do documento de referência:</p>
+    <p class="section-desc">Filtre e explore todos os 25 modelos do Wordwall agrupados conforme a matriz pedagógica do documento de referência[cite: 1]:</p>
 
     <div class="filter-tabs">
       <button type="button" class="tab-btn active" onclick="filterCatalog('all', this)">Todos os Modelos (25)</button>
@@ -765,20 +875,21 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h5>Autoria & Responsabilidade</h5>
-        <p><strong>Profa. Dra. Andréa Soares Rocha da Silva</strong></p>
+        <p><strong>Profa. Dra. Andréa Soares Rocha da Silva</strong>[cite: 1]</p>
+        <p>Grupo Educação, Tecnologia e Saúde (GETS.UFC)[cite: 2]</p>
         <p>Pesquisa e Desenvolvimento em Tecnologias Educacionais e Jogos Digitais.</p>
       </div>
 
       <div class="footer-col">
         <h5>Público-Alvo</h5>
-        <p>Professores, educadores, designers instrucionais e pesquisadores interessados no planejamento pedagógico estruturado de games educativos.</p>
+        <p>Professores, educadores, designers instrucionais e investigadores interessados no planeamento pedagógico estruturado de games educativos.</p>
       </div>
 
       <div class="footer-col">
         <h5>Critérios de Eficácia dos Jogos</h5>
-        <p>• Planejamento pedagógico prévio e alinhamento curricular (Saravali; Bessa; Lima, 2025).</p>
-        <p>• Relevância da situação simulada e transferência prática (Prensky, 2012).</p>
-        <p>• Mediação docente com reflexão crítica pós-jogo (Alves; Branco, 2024).</p>
+        <p>• Planeamento pedagógico prévio e alinhamento curricular (Saravali; Bessa; Lima, 2025)[cite: 1].</p>
+        <p>• Relevância da situação simulada e transferência prática (Prensky, 2012)[cite: 1].</p>
+        <p>• Mediação docente com reflexão crítica pós-jogo (Alves; Branco, 2024)[cite: 1].</p>
       </div>
     </div>
 
@@ -789,41 +900,41 @@
         Referências Científicas da Base Teórica (Normas ABNT)
       </div>
       <ul class="ref-list">
-        <li class="ref-item">ALVES, Esther Aparecida Barbosa; BRANCO, Juliana Cordeiro Soares. Possibilidades e desafios do uso de jogos digitais na educação. <strong>Informação & Informação</strong>, Londrina, v. 29, n. 2, p. 1-23, 2024. DOI: https://doi.org/10.5433/1981-8920.2024v29n2p1.</li>
-        <li class="ref-item">ANTUNES, Rodrigo. Análise do desenvolvimento temático dos estudos sobre games na educação. <strong>Revista Brasileira de Pesquisa em Educação em Ciências</strong>, Belo Horizonte, v. 22, n. 1, p. 741-770, 2020.</li>
-        <li class="ref-item">PRENSKY, Marc. <strong>Aprendizagem baseada em jogos digitais</strong>. São Paulo: SENAC, 2012.</li>
-        <li class="ref-item">RAMOS, Yasmin; ROCHA, Nádia. Jogos digitais e aprimoramento do controle inibitório: um estudo com crianças do Atendimento Educacional Especializado. <strong>Revista Brasileira de Educação Especial</strong>, Marília, v. 25, n. 1, p. 35-50, jan./mar. 2019. DOI: https://doi.org/10.1590/S1413-65382519000100003.</li>
-        <li class="ref-item">SARAVALI, Eliane Giachetto; BESSA, Sonia; LIMA, Yasmin Ramos. Jogos digitais e jogos concretos em contextos de intervenção pedagógica. <strong>Revista Brasileira de Estudos Pedagógicos</strong>, Brasília, v. 106, 2025. DOI: https://doi.org/10.24109/2176-6681.rbep.106.6538.</li>
-        <li class="ref-item">SILVA, Andréa Soares Rocha da. <strong>Aprendizagem por meio de Jogos usando o Wordwall</strong>. Fortaleza, 2026.</li>
-        <li class="ref-item">STUDART, Germano et al. Unidade de Ensino Potencialmente Significativa sobre óptica geométrica apoiada por vídeos, aplicativos e jogos para smartphones. <strong>Revista Brasileira de Ensino de Física</strong>, São Paulo, v. 42, e20200057, 2020. DOI: https://doi.org/10.1590/1806-9126-RBEF-2020-005.</li>
-        <li class="ref-item">TSUTSUMI, Myenne Mieko Ayres et al. Avaliação de jogos educativos no ensino de conteúdos acadêmicos: uma revisão sistemática da literatura. <strong>Revista Portuguesa de Educação</strong>, Braga, v. 33, n. 1, p. 1-21, jun. 2020. DOI: https://doi.org/10.21814/rpe.19130.</li>
+        <li class="ref-item">ALVES, Esther Aparecida Barbosa; BRANCO, Juliana Cordeiro Soares. Possibilidades e desafios do uso de jogos digitais na educação. <strong>Informação & Informação</strong>, Londrina, v. 29, n. 2, p. 1-23, 2024. DOI: https://doi.org/10.5433/1981-8920.2024v29n2p1.[cite: 1]</li>
+        <li class="ref-item">ANTUNES, Rodrigo. Análise do desenvolvimento temático dos estudos sobre games na educação. <strong>Revista Brasileira de Pesquisa em Educação em Ciências</strong>, Belo Horizonte, v. 22, n. 1, p. 741-770, 2020.[cite: 1]</li>
+        <li class="ref-item">PRENSKY, Marc. <strong>Aprendizagem baseada em jogos digitais</strong>. São Paulo: SENAC, 2012.[cite: 1]</li>
+        <li class="ref-item">RAMOS, Yasmin; ROCHA, Nádia. Jogos digitais e aprimoramento do controle inibitório: um estudo com crianças do Atendimento Educacional Especializado. <strong>Revista Brasileira de Educação Especial</strong>, Marília, v. 25, n. 1, p. 35-50, jan./mar. 2019. DOI: https://doi.org/10.1590/S1413-65382519000100003.[cite: 1]</li>
+        <li class="ref-item">SARAVALI, Eliane Giachetto; BESSA, Sonia; LIMA, Yasmin Ramos. Jogos digitais e jogos concretos em contextos de intervenção pedagógica. <strong>Revista Brasileira de Estudos Pedagógicos</strong>, Brasília, v. 106, 2025. DOI: https://doi.org/10.24109/2176-6681.rbep.106.6538.[cite: 1]</li>
+        <li class="ref-item">SILVA, Andréa Soares Rocha da. <strong>Aprendizagem por meio de Jogos usando o Wordwall</strong>. Fortaleza, 2026.[cite: 1]</li>
+        <li class="ref-item">STUDART, Germano et al. Unidade de Ensino Potencialmente Significativa sobre óptica geométrica apoiada por vídeos, aplicativos e jogos para smartphones. <strong>Revista Brasileira de Ensino de Física</strong>, São Paulo, v. 42, e20200057, 2020. DOI: https://doi.org/10.1590/1806-9126-RBEF-2020-005.[cite: 1]</li>
+        <li class="ref-item">TSUTSUMI, Myenne Mieko Ayres et al. Avaliação de jogos educativos no ensino de conteúdos acadêmicos: uma revisão sistemática da literatura. <strong>Revista Portuguesa de Educação</strong>, Braga, v. 33, n. 1, p. 1-21, jun. 2020. DOI: https://doi.org/10.21814/rpe.19130.[cite: 1]</li>
       </ul>
     </div>
 
-    <!-- DECLARAÇÃO DE DIREITOS E CITAÇÃO DO RECURSO -->
+    <!-- DECLARAÇÃO DE DIREITOS E CITAÇÃO ATUALIZADA -->
     <div class="copyright-section">
       <div class="copyright-header">© 2026 Andréa Soares Rocha da Silva. Todos os direitos reservados.</div>
       <p class="copyright-text">
-        Este guia interativo foi elaborado exclusivamente como recurso educacional e pedagógico. Não é permitida a sua comercialização, bem como a reprodução total ou parcial por terceiros sem a expressa autorização da autora. É autorizada a sua livre utilização por professores e pesquisadores para fins estritamente pedagógicos, sendo indispensável a atribuição de autoria e a citação completa da fonte original.
+        Este guia interativo foi elaborado exclusivamente como recurso educacional e pedagógico. Não é permitida a sua comercialização, bem como a reprodução total ou parcial por terceiros sem a expressa autorização da autora. É autorizada a sua livre utilização por professores e investigadores para fins estritamente pedagógicos, sendo indispensável a atribuição de autoria e a citação completa da fonte original.
       </p>
 
       <div class="citation-box">
         <div class="citation-title">Forma recomendada de citação deste recurso (ABNT):</div>
         <div class="citation-code">
-          SILVA, Andréa Soares Rocha da. Guia de Escolha de Modelo de Game para o Wordwall de Acordo com o Objetivo de Aprendizagem. Fortaleza: Edição da Autora, 2026. Recurso Digital Interativo.
+          SILVA, Andréa Soares Rocha da. Guia de Escolha de Modelo de Game para o Wordwall de Acordo com o Objetivo de Aprendizagem. Fortaleza: GETS/UFC, 2026. Recurso Digital Interativo. Disponível em: <a href="https://andreagets.github.io/Guia-interativo-modelos-game-wordwall/" target="_blank" rel="noopener noreferrer">https://andreagets.github.io/Guia-interativo-modelos-game-wordwall/</a>. Acesso em: 25 set. 2026.
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      Guia Pedagógico Interativo • Baseado em Evidências Científicas de Aprendizagem por Jogos Digitais.
+      Guia Pedagógico Interativo • Grupo de Pesquisa Educação, Tecnologia e Saúde (GETS.UFC).
     </div>
   </footer>
 
 </div>
 
 <script>
-  // BANCO DE DADOS DOS 25 MODELOS DO WORDWALL SEGUNDO O DOCUMENTO DA PROFA. ANDRÉA SILVA
+  // BANCO DE DADOS DOS 25 MODELOS DO WORDWALL
   const gamesDatabase = [
     // 1. Associação, Classificação e Estruturação Conceitual
     {
@@ -851,7 +962,7 @@
       name: "Classificação de Grupo / Classificação Rápida",
       category: "associacao",
       catName: "1. Associação & Classificação",
-      dynamics: "Arrastar itens avulsos para suas respectivas categorias conceituais (em ritmo reflexivo ou sob pressão temporal).",
+      dynamics: "Arrastar itens avulsos para suas respetivas categorias conceituais (em ritmo reflexivo ou sob pressão temporal).",
       competence: "Capacidade analítica de categorização, triagem de dados e aplicação rigorosa de critérios de inclusão/exclusão.",
       keywords: ["classificar", "categorizar", "agrupar", "dividir", "triagem", "inclusao", "tipos", "familias", "grupos"],
       pro: false
@@ -893,7 +1004,7 @@
       name: "Quiz de Programa de Jogos",
       category: "avaliacao",
       catName: "2. Avaliação & Decisão",
-      dynamics: "Perguntas de múltipla escolha com temporizador rigoroso, ajudas (50/50, tempo extra) e rodadas bônus.",
+      dynamics: "Perguntas de múltipla escolha com temporizador rigoroso, ajudas (50/50, tempo extra) e rodadas bónus.",
       competence: "Tomada de decisão sob pressão de tempo e gestão de recursos cognitivos e suportes.",
       keywords: ["pressao", "tempo", "rapidez", "bonizacao", "estrategia", "ajuda", "competicao", "gameshow"],
       pro: true
@@ -1056,7 +1167,6 @@
     }
   ];
 
-  // FUNÇÃO DE DEFINIÇÃO RÁPIDA DE EXEMPLOS
   function setGoal(text) {
     document.getElementById('goalInput').value = text;
     analyzeGoal();
@@ -1067,7 +1177,6 @@
     document.getElementById('resultContainer').style.display = 'none';
   }
 
-  // MOTOR DE INFERÊNCIA ANALÍTICA
   function analyzeGoal() {
     const rawInput = document.getElementById('goalInput').value.trim();
     if (!rawInput) {
@@ -1087,7 +1196,6 @@
         }
       });
 
-      // Bônus semântico cruzado por contexto
       if (inputLower.includes("orden") || inputLower.includes("sequên") || inputLower.includes("etapa") || inputLower.includes("fluxo")) {
         if (game.id === "ordem_classificacao") score += 5;
       }
@@ -1116,7 +1224,6 @@
       }
     });
 
-    // Se nenhuma palavra-chave pontuou, fallback para o clássico Quiz ou Combine
     if (maxScore <= 0) {
       bestGame = gamesDatabase.find(g => g.id === "quiz");
     }
@@ -1124,7 +1231,6 @@
     renderResult(bestGame, rawInput);
   }
 
-  // RENDERIZAÇÃO DO RESULTADO
   function renderResult(game, originalGoal) {
     const resBox = document.getElementById('resultContainer');
     document.getElementById('resCategory').innerText = game.catName;
@@ -1132,11 +1238,9 @@
     document.getElementById('resDynamics').innerText = game.dynamics;
     document.getElementById('resCompetence').innerText = game.competence;
 
-    // Justificativa baseada nas evidências
     const evidenceText = `O objetivo "${originalGoal.substring(0, 75)}..." é potencializado por este modelo porque, como demonstram Prensky (2012) e Saravali, Bessa e Lima (2025), a transferência da aprendizagem ocorre quando a mecânica do game espelha fielmente a competência pretendida. Recomenda-se realizar uma mediação docente ativa logo após a rodada com perguntas de reflexão (debriefing).`;
     document.getElementById('resEvidence').innerText = evidenceText;
 
-    // Alternativas do mesmo grupo ou grupos correlatos
     const alternatives = gamesDatabase.filter(g => g.category === game.category && g.id !== game.id).slice(0, 3);
     const altContainer = document.getElementById('resAlternatives');
     
@@ -1155,7 +1259,6 @@
     resBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  // FILTRO DO CATÁLOGO DE MODELOS
   function filterCatalog(category, btnElement) {
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(t => t.classList.remove('active'));
@@ -1177,7 +1280,6 @@
     `).join('');
   }
 
-  // Inicialização do Catálogo Completo
   filterCatalog('all', document.querySelector('.tab-btn.active'));
 </script>
 
