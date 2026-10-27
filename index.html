@@ -1257,6 +1257,10 @@
   // Inicialização do Catálogo Completo
   filterCatalog('all', document.querySelector('.tab-btn.active'));
 </script>
-
+<script>
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+</script>
 </body>
 </html>
